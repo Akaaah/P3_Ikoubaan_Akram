@@ -1,0 +1,69 @@
+@import '../utils/variables';
+@import '../components/btn';
+@import '../base/general';
+@import '../utils/mixins';
+@import '../components/breakpoints';
+
+// fonctionnement
+.section_fonctionnement{
+    background-color: #fffefe;
+    .container_fonctionnement{
+        @extend %column;
+        max-width: 1024px;
+        margin: auto;
+        margin-bottom: 5rem;
+        
+        h2{
+            font-size: 2.2rem;
+            margin-left: 1.5rem;
+            margin-top: 3rem;
+        }
+        .box_fonctionnement{
+            background-color: $light_grey;
+            padding: 2rem;
+            margin-top: 2rem;
+            margin-left: 2.3rem;
+            margin-right: 2.3rem;
+            border-radius: 15px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            box-shadow: 2px 6px 8px  rgba(51, 50, 50, 0.1);
+            .fonctionnement{
+                display: flex;
+                .cirle{
+                    @extend %cirle;
+                }
+                .icone{
+                    margin-right: 2rem;
+                    font-size: 1.6rem;
+                    color: gray;
+                }
+                .text{
+                    font-size: 1.6rem;
+                }
+            }      
+        }
+        .pink{
+            background-color: #f4ecff;
+            .fonctionnement{
+                .icone{
+                    color: $purple;
+                }
+                .text{
+                    color: $purple
+                }
+            }
+        }
+        // hover
+        .box_fonctionnement:hover{
+            @extend %btn_hover;
+        }
+        // responsive
+        .btn_container_fonctionnement{
+            @include desktop{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1Fr;
+                }
+            }
+        }
+}

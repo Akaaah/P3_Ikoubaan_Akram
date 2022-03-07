@@ -1,0 +1,110 @@
+@import '../utils/variables';
+@import '../components/btn';
+@import '../base/general';
+@import '../utils/mixins';
+@import '../components/breakpoints';
+
+// Restaurants
+
+.section_restaurants{
+    height: 100%;
+    .container_box_restaurants{
+        margin-bottom: 5rem;
+    }
+    .container_restaurants{
+        @extend %column;
+        max-width: 1024px;
+        margin: auto;
+        margin-top: 3rem;
+        h2{
+            margin-top: 3rem;
+            margin-left: 1.5rem;
+            font-size: 2.2rem;
+        }
+        .box_restaurants{
+            background-color: white;
+            margin-top: 2rem;
+            margin-left: 1.5rem;
+            margin-right: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 2px 6px 8px  rgba(51, 50, 50, 0.1);
+            a{
+                text-decoration: none;
+                color: black;
+            }
+            .box_img_restaurant{
+                position: relative;
+                .img_restaurant{
+                    object-fit: cover;
+                    width: 100%;
+                    height: 15rem;
+                    border-radius: 15px 15px 0px 0px;
+                }
+                // box Nouveau
+                p{
+                    position: absolute;
+                    bottom: 10rem;
+                    right: 1.5rem;
+                    z-index: 1;
+                    padding: 1rem;
+                    background-color: #98e3d0;
+                    color: #008766;
+                    font-size: 1.4rem;
+                    font-weight: bold;
+                    border-radius: 2px;
+                }
+            }
+            .description{
+                position: relative;
+                margin-left: 1rem;
+                margin-top: 1rem;
+                line-height: 2rem;
+                margin-bottom: 1rem;
+                height: 5rem;
+                
+                h4{
+                    font-size: 1.6rem;
+                }
+                p{
+                    font-size: 1.5rem;
+                }
+                .heart{
+                    i{
+                        position: absolute;
+                        right: 3rem;
+                        font-size: 2rem;
+                        bottom: 2.2rem;
+                    }
+                    .fas{
+                        opacity: 0;
+                    }     
+                }
+                .heart:hover{  
+                    .fas{
+                        background-image: $gradient;
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        color: transparent;
+                        opacity: 1;
+                        transition: 0.5s;
+                    }
+                    .far{
+                        opacity: 0;
+                    }
+                }
+            }      
+        }
+        .box_restaurants:hover{
+            transform: scale(1.02);
+            box-shadow: 2px 6px 8px  rgb(147, 86, 220, 0.2),
+            -2px -6px 8px rgb(147, 86, 220, 0.2);
+        }
+    }
+    // responsive
+    .container_box_restaurants{
+        @include desktop{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            }
+        }
+}

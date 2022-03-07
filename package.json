@@ -1,0 +1,23 @@
+{
+  "name": "projet-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass -w scss:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akaaah/P3_Ikoubaan_Akram.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Akaaah/P3_Ikoubaan_Akram/issues"
+  },
+  "homepage": "https://github.com/Akaaah/P3_Ikoubaan_Akram#readme",
+  "dependencies": {
+    "sass": "^1.45.2"
+  }
+}

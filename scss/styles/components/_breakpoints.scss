@@ -1,0 +1,24 @@
+$breakpoints: (
+    desktop: 935px,
+    xl:1200px,
+    s:350px,
+);
+
+
+@mixin desktop {
+    @media screen and (min-width: map-get($breakpoints, desktop)){
+        @content;
+        }
+    }
+
+    @mixin xl {
+        @media screen and (min-width: map-get($breakpoints, xl)){
+            @content;
+            }
+        }
+
+        @mixin s {
+            @media screen and (max-width: map-get($breakpoints, s)){
+                @content;
+                }
+            }

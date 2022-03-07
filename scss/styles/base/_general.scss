@@ -1,0 +1,32 @@
+// Général
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    height: 100%;
+}
+
+body{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background-color: $light_grey;
+}
+
+footer{
+    margin-top: auto;
+}
+
+section{
+    font-family: $texte;
+}
+
+h1{
+    font-size: 3.5rem;
+}

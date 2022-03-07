@@ -1,0 +1,27 @@
+
+.choix  { 
+    animation: gradual 1.5s linear forwards;
+}
+
+.food :nth-child(1){
+    animation-delay: 1.6s;
+}
+.food :nth-child(2){
+    animation-delay: 1.8s;
+}
+.food :nth-child(3){
+    animation-delay: 2s;
+}
+.food :nth-child(4){
+    animation-delay: 2.2s;
+}
+
+
+@keyframes gradual {
+    0% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

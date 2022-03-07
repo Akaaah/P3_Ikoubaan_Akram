@@ -1,0 +1,257 @@
+@import 'utils/variables';
+@import 'components/btn';
+@import 'base/general';
+@import 'utils/mixins';
+@import 'components/breakpoints';
+@import 'layout/footer';
+@import 'components/loader';
+@import 'components/gradual_onset';
+
+// header
+
+header{
+    height: 8rem;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    
+    .retour{
+        display: flex;
+        justify-content: flex-start;
+        i{
+            margin-left: 2rem;
+            font-size: 1.8rem;
+            color: #5a5a5a;
+        }
+    }
+    .logo_header{
+        display: grid;
+        justify-content: center;
+        a{
+            text-decoration: none;
+            color: black;
+            font-family: $logo;
+            font-size: 2.5rem;
+        }
+    }
+}
+
+Body{
+    background-color: white;
+}
+
+// background image
+
+.img_background{
+    img{   
+    width: 100%;
+    height: 20vh;
+    object-fit: cover;
+    object-position: 50% 50%;
+    @include xl{
+        height: 50vh;
+    }
+    } 
+}
+
+// Menu restaurants
+
+.section_menu{
+    background-color: $light_grey;
+        @include xl{
+            margin-left: auto;
+            margin-right: auto;
+            width: 120rem;
+        }
+        .btn_commander{      
+            background: $gradient;
+            padding: 1.5rem;
+            border-radius: 22px;
+            box-shadow: 2px 4px 5px  rgba(0, 0, 0, 0.2);
+            width: 20rem;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            margin-bottom: 6rem;
+            margin-top: 4rem; 
+            @include xl{
+                margin-top: 0;
+            }
+            a{
+                text-decoration: none;
+                color: white;
+                font-size: 1.5rem;
+                font-family: $texte;              
+            }
+        }
+        .btn_note{
+            @include xl{
+                margin-top: 5rem;
+            }
+        }
+        
+        .btn_commander:hover{
+            @extend %btn_hover;
+        }
+    .container_main{
+        display: block;
+        margin-top: -5rem;
+        border-radius: 30px 30px 0px 0px;
+        background-color: $light_grey;
+        position: relative;
+        .title{
+            padding-top: 0.5rem;
+            position: relative;
+            h2{
+                margin-top: 2rem;
+                margin-left: 1rem;
+                font-family: $logo;
+                font-size: 2.2rem;
+            }
+            .heart{
+                i{
+                    position: absolute;
+                    right: 3rem;
+                    font-size: 2rem;
+                    top: 3rem;
+                }
+                .fas{
+                    opacity: 0;
+                }     
+            }
+            .heart:hover{  
+                .fas{
+                    background-image: $gradient;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    color: transparent;
+                    opacity: 1;
+                    transition: 0.5s;
+                    cursor: pointer;
+                }
+                .far{
+                    opacity: 0;
+                }
+            } 
+        }
+        .container_menu{
+            margin-left: 1rem;
+            
+            display: grid;
+            grid-template-columns: 1fr;
+            
+            @include xl{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    height: 27vh;
+                }
+               
+            .menu{
+                
+                .subtitle{
+                    position: relative;
+                    h2{
+                        font-weight: lighter;
+                        margin-top: 2rem;
+                        margin-bottom: 0.4rem;
+                    }
+                }
+                .subtitle::after{
+                    content: "";
+                    position: absolute;
+                    height: 0.3rem;
+                    left: 0;
+                    bottom: -0.6rem;
+                    width: 10%;
+                    background-color: #98e3d0;
+                }
+                .food{
+                    @include xl{
+                        margin-right: 2rem;  
+                    }
+                    .choix{
+                        line-height: 1.9rem;
+                        margin-top: 2rem;
+                        background-color: white;
+                        box-shadow: 2px 6px 8px  rgba(51, 50, 50, 0.1);
+                        height: 6rem;
+                        border-radius: 15px;
+                        margin-top: 2rem;
+                        overflow: hidden;
+                        max-width: 98%;
+                        opacity: 0;
+                        @include s{
+                            width: 30rem; 
+                        }
+                        .case{
+                            display: flex;
+                            justify-content: space-between;
+                            height: 5rem;
+                            margin-right: -5rem;
+                            .description{
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                                h3{
+                                    font-size: 1.6rem;
+                                    margin-left: 1rem;
+                                    margin-top: 1rem;
+                                    max-width: 100%;
+                                    text-overflow: ellipsis;
+                                    overflow: hidden;
+                                }
+                                p{
+                                    font-size: 1.3rem;
+                                    margin-left: 1rem;
+                                    font-weight: lighter;
+                                    text-overflow: ellipsis;
+                                    overflow: hidden;
+                                }
+                            }
+                            .prix{
+                                display: flex;
+                                flex-direction: row;
+                                p{  
+                                    font-size: 1.5rem;
+                                    font-weight: bold;
+                                    margin-top: 1rem;
+                                    padding: 2rem;
+                                }
+                                
+                            }
+                            .check{
+                                font-size: 2rem;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                background-color: #98e3d0;
+                                color: white;
+                                padding: 0;
+                                width: 5rem;
+                                height: 6rem;
+                                border-radius: 0px 15px 15px 0px;
+                                .fa-check-circle{
+                                    transform: rotate(-180deg);
+                                }
+                            }                         
+                        }
+                        .case:hover{
+                            cursor: pointer;
+                            margin-right: 0rem;
+                            transition: 0.5s;
+                             
+                            .check{
+                                .fa-check-circle{
+                                    animation-name: "rotation";
+                                    transform: rotate(360deg);
+                                    transition: 0.6s;
+                                }
+                             }  
+                        }                        
+                    }                      
+                }
+            }
+        }
+    }
+}

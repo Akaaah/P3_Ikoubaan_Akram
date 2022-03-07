@@ -1,0 +1,76 @@
+@import '../utils/variables';
+@import '../components/btn';
+@import '../base/general';
+@import '../utils/mixins';
+@import '../components/breakpoints';
+
+
+// footer
+
+footer{
+    height: 15rem;
+    background-color: #353535;
+    margin-top: auto;
+    .footer_box{
+        margin-left: 1.5rem;
+    }
+    .container_footer{
+        max-width: 1024px;
+        margin: auto;
+        display: grid;
+        .logo_footer{
+            a{  
+                text-decoration: none;
+                h3{
+                    color: white;
+                    margin-top: 2rem;
+                    font-size: 2rem;
+                    font-family: $logo;
+                    margin-bottom: 0.5rem;
+                }
+            }  
+        }
+        .logo_footer:hover{
+            a{
+                h3{
+                    color: $purple;
+                }
+            }
+        }
+        .link_footer{
+            display: grid;
+            grid-template-columns: 1fr;
+            
+            a{
+                text-decoration: none;
+                color: white;
+                margin-top: 0.5rem;
+                font-size: 1.5rem;
+                font-family: $texte;
+            }
+                .fa-utensils{
+                    font-size: 1.2rem;
+                    margin-right: 1rem;
+                }
+                .fa-hands-helping{
+                    font-size: 1.2rem;
+                    margin-right: 0.5rem;
+                }
+            
+            a:hover{
+                color: $purple;
+            }
+            // responsive
+            @include desktop{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr ;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+    // responsive
+    @include desktop{
+        height: 10rem;
+    }
+}

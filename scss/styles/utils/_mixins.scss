@@ -1,0 +1,25 @@
+%center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%column{
+    display: flex;
+    flex-direction: column;
+}
+
+%cirle{
+    position: relative;
+    right: 3rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    background-color: #9356DC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: normal;
+}
+
